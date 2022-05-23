@@ -10,15 +10,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database = require("../../config/database");
-function cadastrarTransacao(transacao) {
+function cadastrarTransacaoAsync(transacao) {
     return __awaiter(this, void 0, void 0, function* () {
-        const conn = yield database.connect();
-        const query = `INSERT INTO transacao(tipo_id, data, valor, cpf, cartao, hora, nome_proprietario, nome_loja) 
-    VALUES ('${transacao.tipo}', '${transacao.data}', '${transacao.valor}', '${transacao.cpf}', '${transacao.cartao}',
-    '${transacao.hora}', '${transacao.nomeProprietario}','${transacao.nomeLoja}');`;
-        console.log(query);
-        const [rows] = yield conn.query(query);
-        return rows;
+        try {
+            const conn = yield database.connect();
+            const query = `INSERT INTO transacao(tipo_id, data, valor, cpf, cartao, hora, nome_proprietario, nome_loja) 
+      VALUES ('${transacao.tipo}', '${transacao.data}', '${transacao.valor}', '${transacao.cpf}', '${transacao.cartao}',
+      '${transacao.hora}', '${transacao.nomeProprietario}','${transacao.nomeLoja}');`;
+            const [rows] = yield conn.query(query);
+            return rows;
+        }
+        catch (error) {
+            console.log(error);
+        }
     });
 }
-module.exports = { cadastrarTransacao };
+module.exports = { cadastrarTransacaoAsync };

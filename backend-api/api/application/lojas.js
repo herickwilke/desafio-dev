@@ -9,15 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const database = require("../../config/database");
-function listarTransacoesAsync(transacao) {
+const lojasRepositorio = require("../repositories/lojasRepositorio");
+function listarOperacoes() {
     return __awaiter(this, void 0, void 0, function* () {
-        const conn = yield database.connect();
-        const query = `SELECT * FROM transacao t 
-                    INNER JOIN tipo_transacao tt on tt.id = t.tipo_id
-                    INNER JOIN natureza_transacao nt on nt.id = tt.natureza_id`;
-        const [rows] = yield conn.query(query);
-        return rows;
+        return yield lojasRepositorio.listarTransacoesAsync();
     });
 }
-module.exports = { listarTransacoesAsync };
+module.exports = {
+    listarOperacoes,
+};

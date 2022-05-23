@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header">Faça upload do arquivo CNAB</div>
+  <div class="card-body">
+    <mat-form-field>
+      <div>
+        <mat-toolbar>
+          <!-- Display files names -->
+          <input matInput [(ngModel)]="fileAttr" readonly name="name" />
+
+          <!-- Browse Button -->
+          <button mat-flat-button color="accent">Buscar Arquivo</button>
+        </mat-toolbar>
+
+        <!-- Fetch selected filed on change -->
+        <input
+          type="file"
+          #fileInput
+          id="uploadFile"
+          (change)="selectFile($event)"
+          name="uploadFile"
+          single="single"
+          accept="text/plain"
+        />
+      </div>
+    </mat-form-field>
+  </div>
+  <button
+    class="enviar mat-elevation-z4 mt-2 mx-auto"
+    mat-flat-button
+    color="primary"
+    [disabled]="!selectedFiles"
+    (click)="upload()"
+  >
+    <mat-icon>upload</mat-icon>
+    Enviar
+  </button>
+</div>

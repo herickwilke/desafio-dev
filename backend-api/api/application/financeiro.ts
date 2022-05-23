@@ -14,8 +14,7 @@ async function processarArquivo(arquivo: any) {
     trans.hora = linha.slice(42, 48);
     trans.nomeProprietario = linha.slice(48, 62);
     trans.nomeLoja = linha.slice(62, 81);
-    console.log(trans);
-    financeiroRepositorio.cadastrarTransacao(trans);
+    financeiroRepositorio.cadastrarTransacaoAsync(trans);
   });
 
   return true;

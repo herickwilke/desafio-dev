@@ -9,7 +9,7 @@ module.exports = () => {
   db.connect();
 
   // Setando variáveis da aplicação
-  app.use(bodyParser.text());
+  app.use(bodyParser.json());
   app.set('port', process.env.PORT || config.get('server.port'));
 
   // Configuração de rotas

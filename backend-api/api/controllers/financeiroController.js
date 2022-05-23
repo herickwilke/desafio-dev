@@ -5,9 +5,10 @@ module.exports = () => {
   // Recebe o arquivo CNAB
   controller.processarArquivo = (req, res) => {
     try {
-      if (req.headers["content-type"] == "text/plain") {
-        if (financeiro.processarArquivo(req.body)) {
-          res.status(200).send("Importado com sucesso.");
+      if (req.headers["content-type"] == "application/json" && req.body.file) {
+        if (financeiro.processarArquivo(req.body.file)) {
+          console.log("deu");
+          res.status(200).json({ status: "sucesso" });
         }
       } else {
         res.status(400).send("Verifique o arquivo enviado e tente novamente.");
