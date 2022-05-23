@@ -1,0 +1,11 @@
+{
+  "server": {
+    "port": 8080
+  },
+  "database": {
+    "port": "3306",
+    "name": "cnab_desafio",
+    "user": "desafio",
+    "password": "abc123"
+  }
+}
