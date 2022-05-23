@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroArquivoComponent } from './containers/public/cadastro-arquivo/cadastro-arquivo.component';
+import { LojasTransacoesComponent } from './containers/public/lojas-transacoes/lojas-transacoes.component';
 import { SidebarComponent } from './containers/public/sidebar/sidebar.component';
 import { TopbarComponent } from './containers/public/topbar/topbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +18,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
@@ -25,6 +29,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     CadastroArquivoComponent,
     SidebarComponent,
     TopbarComponent,
+    LojasTransacoesComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     FormsModule,
     MatInputModule,
     SweetAlert2Module,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
