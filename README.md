@@ -1,5 +1,39 @@
 # Desafio programação - para vaga desenvolvedor
 
+# Minha versão
+
+O projeto foi criado utilizando as seguintes tecnologias:
+Back End: NodeJS com Express;
+Front End: Angular v13;
+Banco de dados: MySQL;
+
+A estrutura dos arquivos foi separada em três pastas:
+
+```
+├── mean-docker/
+│   ├── backend/
+│   └── database/
+│   └── frontend/
+```
+
+# 💻 Instruções para executar o código
+
+1. Estar em um ambiente rodando Docker;
+2. Navegar para a pasta "mean-docker":
+
+```
+cd mean-docker/
+```
+
+3. Executar o conteiner criado para rodar toda a aplicação:
+
+```
+docker-compose up --build -d
+```
+
+# Instruções bycoder
+
+<hr>
 Por favor leiam este documento do começo ao fim, com muita atenção.
 O intuito deste teste é avaliar seus conhecimentos técnicos em programação.
 O teste consiste em parsear [este arquivo de texto(CNAB)](https://github.com/ByCodersTec/desafio-ruby-on-rails/blob/master/CNAB.txt) e salvar suas informações(transações financeiras) em uma base de dados a critério do candidato.
@@ -9,7 +43,7 @@ Este desafio deve ser feito por você em sua casa. Gaste o tempo que você quise
 
 1. Primeiro, faça um fork deste projeto para sua conta no Github (crie uma se você não possuir).
 2. Em seguida, implemente o projeto tal qual descrito abaixo, em seu clone local.
-3. Por fim, envie via email o projeto ou o fork/link do projeto para seu contato Bycoders_ com cópia para rh@bycoders.com.br.
+3. Por fim, envie via email o projeto ou o fork/link do projeto para seu contato Bycoders\_ com cópia para rh@bycoders.com.br.
 
 # Descrição do projeto
 
@@ -40,30 +74,30 @@ Sua tarefa é criar uma interface web que aceite upload do [arquivo CNAB](https:
 
 # Documentação do CNAB
 
-| Descrição do campo  | Inicio | Fim | Tamanho | Comentário
-| ------------- | ------------- | -----| ---- | ------
-| Tipo  | 1  | 1 | 1 | Tipo da transação
-| Data  | 2  | 9 | 8 | Data da ocorrência
-| Valor | 10 | 19 | 10 | Valor da movimentação. *Obs.* O valor encontrado no arquivo precisa ser divido por cem(valor / 100.00) para normalizá-lo.
-| CPF | 20 | 30 | 11 | CPF do beneficiário
-| Cartão | 31 | 42 | 12 | Cartão utilizado na transação 
-| Hora  | 43 | 48 | 6 | Hora da ocorrência atendendo ao fuso de UTC-3
-| Dono da loja | 49 | 62 | 14 | Nome do representante da loja
-| Nome loja | 63 | 81 | 19 | Nome da loja
+| Descrição do campo | Inicio | Fim | Tamanho | Comentário                                                                                                                |
+| ------------------ | ------ | --- | ------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Tipo               | 1      | 1   | 1       | Tipo da transação                                                                                                         |
+| Data               | 2      | 9   | 8       | Data da ocorrência                                                                                                        |
+| Valor              | 10     | 19  | 10      | Valor da movimentação. _Obs._ O valor encontrado no arquivo precisa ser divido por cem(valor / 100.00) para normalizá-lo. |
+| CPF                | 20     | 30  | 11      | CPF do beneficiário                                                                                                       |
+| Cartão             | 31     | 42  | 12      | Cartão utilizado na transação                                                                                             |
+| Hora               | 43     | 48  | 6       | Hora da ocorrência atendendo ao fuso de UTC-3                                                                             |
+| Dono da loja       | 49     | 62  | 14      | Nome do representante da loja                                                                                             |
+| Nome loja          | 63     | 81  | 19      | Nome da loja                                                                                                              |
 
 # Documentação sobre os tipos das transações
 
-| Tipo | Descrição | Natureza | Sinal |
-| ---- | -------- | --------- | ----- |
-| 1 | Débito | Entrada | + |
-| 2 | Boleto | Saída | - |
-| 3 | Financiamento | Saída | - |
-| 4 | Crédito | Entrada | + |
-| 5 | Recebimento Empréstimo | Entrada | + |
-| 6 | Vendas | Entrada | + |
-| 7 | Recebimento TED | Entrada | + |
-| 8 | Recebimento DOC | Entrada | + |
-| 9 | Aluguel | Saída | - |
+| Tipo | Descrição              | Natureza | Sinal |
+| ---- | ---------------------- | -------- | ----- |
+| 1    | Débito                 | Entrada  | +     |
+| 2    | Boleto                 | Saída    | -     |
+| 3    | Financiamento          | Saída    | -     |
+| 4    | Crédito                | Entrada  | +     |
+| 5    | Recebimento Empréstimo | Entrada  | +     |
+| 6    | Vendas                 | Entrada  | +     |
+| 7    | Recebimento TED        | Entrada  | +     |
+| 8    | Recebimento DOC        | Entrada  | +     |
+| 9    | Aluguel                | Saída    | -     |
 
 # Avaliação
 
