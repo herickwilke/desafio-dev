@@ -6,6 +6,7 @@ module.exports = (app) => {
   // Configuração CORS
   app.use(cors());
 
+  // Rotas
   app
     .route("/api/v1/processar-arquivo")
     .post(financeiroController.processarArquivo);

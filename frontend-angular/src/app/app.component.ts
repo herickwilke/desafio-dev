@@ -33,17 +33,19 @@ export class AppComponent {
     );
   }
 
-  ngAfterContentInit() {
-    this.observer.observe(['(max-width: 880px)']).subscribe((res) => {
-      if (this.sidenav) {
-        if (res.matches) {
-          this.sidenav.mode = 'over';
-          this.sidenav.close();
-        } else {
-          this.sidenav.mode = 'side';
-          this.sidenav.open();
-        }
+  ngAfterViewInit() {
+    this.observer.observe(['(max-width: 1300px)']).subscribe((res) => {
+      if (res.matches) {
+        this.sidenav.mode = 'over';
+        this.sidenav.close();
+      } else {
+        this.sidenav.mode = 'side';
+        this.sidenav.open();
       }
     });
+  }
+
+  goToLink(url: string) {
+    window.open(url, '_blank');
   }
 }

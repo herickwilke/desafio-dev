@@ -15,6 +15,12 @@ function listarOperacoes() {
         return yield lojasRepositorio.listarTransacoesAsync();
     });
 }
+function listarTotaisPorLojaTipo() {
+    return __awaiter(this, void 0, void 0, function* () {
+        return yield lojasRepositorio.listarTotaisPorLojaTipoAsync();
+    });
+}
 module.exports = {
     listarOperacoes,
+    listarTotaisPorLojaTipo,
 };

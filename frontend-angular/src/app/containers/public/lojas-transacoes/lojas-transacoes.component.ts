@@ -9,24 +9,39 @@ import { FinanceiroService } from 'src/services/financeiro.service';
   styleUrls: ['./lojas-transacoes.component.scss'],
 })
 export class LojasTransacoesComponent implements OnInit {
-  public transacoes: any = [];
   dataSource = new MatTableDataSource<Object>();
+  dataSourceTotais = new MatTableDataSource<Object>();
   displayedColumns: string[] = [
+    'nome_loja',
+    'nome_proprietario',
     'cartao',
     'cpf',
     'descricao',
     'natureza',
     'valor',
+    'data',
+    'hora',
   ];
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  displayedColumnsTotais: string[] = [
+    'nome_loja',
+    'descricao',
+    'natureza',
+    'valor',
+  ];
+  @ViewChild('transacoesPaginator') paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginatorTotais!: MatPaginator;
 
   constructor(private financeiroService: FinanceiroService) {}
 
   async ngOnInit() {
-    (await this.financeiroService.buscaTransacoes()).subscribe((res) => {
-      this.transacoes = res;
-      this.dataSource.data = this.transacoes;
+    (await this.financeiroService.buscaTransacoes()).subscribe((res: any) => {
+      this.dataSource.data = res;
       this.dataSource.paginator = this.paginator;
+    });
+
+    (await this.financeiroService.buscaTotais()).subscribe((res: any) => {
+      this.dataSourceTotais.data = res;
+      this.dataSourceTotais.paginator = this.paginatorTotais;
     });
   }
 }

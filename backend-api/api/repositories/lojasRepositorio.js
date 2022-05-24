@@ -20,4 +20,15 @@ function listarTransacoesAsync(transacao) {
         return rows;
     });
 }
-module.exports = { listarTransacoesAsync };
+function listarTotaisPorLojaTipoAsync(transacao) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const conn = yield database.connect();
+        const query = `SELECT DISTINCT nome_loja, sum(valor) as 'valor', descricao, natureza FROM transacao t 
+                    INNER JOIN tipo_transacao tt on tt.id = t.tipo_id
+                    INNER JOIN natureza_transacao nt on nt.id = tt.natureza_id
+                  GROUP BY nome_loja, descricao, natureza`;
+        const [rows] = yield conn.query(query);
+        return rows;
+    });
+}
+module.exports = { listarTransacoesAsync, listarTotaisPorLojaTipoAsync };

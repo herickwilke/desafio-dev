@@ -20,4 +20,8 @@ export class FinanceiroService {
   async buscaTransacoes() {
     return await this.http.get(`${this.baseUrl}/listar-transacoes`);
   }
+
+  async buscaTotais() {
+    return await this.http.get(`${this.baseUrl}/listar-totais`);
+  }
 }
