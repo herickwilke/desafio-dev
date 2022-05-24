@@ -7,7 +7,6 @@ module.exports = () => {
     try {
       if (req.headers["content-type"] == "application/json" && req.body.file) {
         if (financeiro.processarArquivo(req.body.file)) {
-          console.log("deu");
           res.status(200).json({ status: "sucesso" });
         }
       } else {
