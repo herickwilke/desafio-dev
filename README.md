@@ -31,9 +31,12 @@ cd mean-docker/
 docker-compose up --build -d
 ```
 
-# Instruções bycoder
+Obs: não houve tempo suficiente para criação de testes automatizados.
 
 <hr>
+
+# Instruções bycoders\_
+
 Por favor leiam este documento do começo ao fim, com muita atenção.
 O intuito deste teste é avaliar seus conhecimentos técnicos em programação.
 O teste consiste em parsear [este arquivo de texto(CNAB)](https://github.com/ByCodersTec/desafio-ruby-on-rails/blob/master/CNAB.txt) e salvar suas informações(transações financeiras) em uma base de dados a critério do candidato.
