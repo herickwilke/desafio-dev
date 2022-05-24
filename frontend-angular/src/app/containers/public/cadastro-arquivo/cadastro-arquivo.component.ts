@@ -46,11 +46,8 @@ export class CadastroArquivoComponent implements OnInit {
                 title: 'Enviado com sucesso',
                 html: '<p>O seu arquivo CNAB foi importado com sucesso para a base de dados.</p>',
                 icon: 'success',
-                showCancelButton: true,
-                confirmButtonText: 'Ir para vendas',
-                confirmButtonAriaLabel: 'Thumbs up, great!',
-                cancelButtonText: 'Continuar importando',
-                cancelButtonAriaLabel: 'Thumbs down',
+                confirmButtonText: 'Fechar',
+                confirmButtonAriaLabel: 'Ótimo!',
               });
             }
           },

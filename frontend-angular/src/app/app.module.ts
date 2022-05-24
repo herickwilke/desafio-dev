@@ -23,6 +23,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { HomeComponent } from './containers/public/home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     SidebarComponent,
     TopbarComponent,
     LojasTransacoesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
