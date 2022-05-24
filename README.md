@@ -31,6 +31,14 @@ cd mean-docker/
 docker-compose up --build -d
 ```
 
+## Acessando o sistema
+
+Quando o Docker terminar de inicializar os projetos, automaticamente ele irá criar todo o ambiente, rodar migrations de criação de banco e ter todo o necessário para suportar a aplicação rodando. Para acessar no navegador, acesse:
+
+```
+http://localhost:4200/
+```
+
 Obs: não houve tempo suficiente para criação de testes automatizados.
 
 <hr>
